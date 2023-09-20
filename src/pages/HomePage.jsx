@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import Navbar from './../components/Navbar';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   return (
@@ -7,6 +7,8 @@ function HomePage() {
       <Navbar />
 
       <h1>Home</h1>
+
+      <Link to="/app">Go to the app</Link>
     </div>
   );
 }
