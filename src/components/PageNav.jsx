@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import styles from './NavLink.module.css';
+import styles from './PageNav.module.css';
 
-function Navbar() {
+function PageNav() {
   return (
     <nav className={styles.nav}>
       <ul>
@@ -19,4 +19,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default PageNav;
