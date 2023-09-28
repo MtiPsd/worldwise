@@ -5,29 +5,35 @@ import {
   Marker,
   Popup,
   TileLayer,
+  useMap,
+  useMapEvents,
 } from "react-leaflet";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
 
 function Map() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const { cities } = useCities();
 
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
 
+  // * useEffect works as synchronization mechanism "here"
+  // * it only changes position if lat & lng changes
+  useEffect(() => {
+    if (lat && lng) {
+      setMapPosition([lat, lng]);
+    }
+  }, [lat, lng]);
+
   return (
-    <div
-      className={styles.mapContainer}
-      onClick={() => navigate("form")}
-    >
+    <div className={styles.mapContainer}>
       <MapContainer
-        center={mapPosition}
-        zoom={13}
+        zoom={8}
         scrollWheelZoom={true}
         className={styles.map}
+        center={mapPosition}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -44,9 +50,29 @@ function Map() {
             </Popup>
           </Marker>
         ))}
+
+        <ChangeCenter position={mapPosition} />
+        <DetectClick />
       </MapContainer>
     </div>
   );
+}
+
+function ChangeCenter({ position }) {
+  const map = useMap();
+  map.setView(position);
+  return null;
+}
+
+function DetectClick() {
+  const navigate = useNavigate();
+
+  useMapEvents({
+    click: e => {
+      const { lat, lng } = e.latlng;
+      return navigate(`form?lat=${lat}&lng=${lng}`);
+    },
+  });
 }
 
 export default Map;
