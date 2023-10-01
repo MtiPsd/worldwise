@@ -2,17 +2,19 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useUrlPosition } from "../hooks/useUrlPosition";
 
+import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Form.module.css";
 import Button from "./Button";
 import BackButton from "./BackButton";
 import Message from "./Message";
 import Spinner from "./Spinner";
+import DatePicker from "react-datepicker";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
     .toUpperCase()
     .split("")
-    .map(char => 127397 + char.charCodeAt());
+    .map((char) => 127397 + char.charCodeAt());
   return String.fromCodePoint(...codePoints);
 }
 
@@ -32,6 +34,10 @@ function Form() {
   const [geocodingError, setGeocodingError] = useState("");
 
   useEffect(() => {
+    if (!lat && !lng) {
+      return;
+    }
+
     async function fetchCityData() {
       try {
         setIsLoadingGeocoding(true);
@@ -61,6 +67,16 @@ function Form() {
     fetchCityData();
   }, [lat, lng]);
 
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  if (!lat && !lng) {
+    return (
+      <Message message="Start by clicking somewhere on the map" />
+    );
+  }
+
   if (isLoadingGeocoding) {
     return <Spinner />;
   }
@@ -70,12 +86,12 @@ function Form() {
   }
 
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
           id="cityName"
-          onChange={e => setCityName(e.target.value)}
+          onChange={(e) => setCityName(e.target.value)}
           value={cityName}
         />
         <span className={styles.flag}>{emoji}</span>
@@ -83,10 +99,11 @@ function Form() {
 
       <div className={styles.row}>
         <label htmlFor="date">When did you go to {cityName}?</label>
-        <input
+        <DatePicker
           id="date"
-          onChange={e => setDate(e.target.value)}
-          value={date}
+          onChange={(date) => setDate(date)}
+          selected={date}
+          dateFormat="dd/MM/yyyy"
         />
       </div>
 
@@ -96,7 +113,7 @@ function Form() {
         </label>
         <textarea
           id="notes"
-          onChange={e => setNotes(e.target.value)}
+          onChange={(e) => setNotes(e.target.value)}
           value={notes}
         />
       </div>
