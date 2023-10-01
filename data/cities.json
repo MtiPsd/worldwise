@@ -1,28 +1,16 @@
 {
   "cities": [
     {
-      "cityName": "Madrid",
+      "cityName": "Boadilla del Monte",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
+      "date": "2023-10-01T18:20:00.170Z",
       "notes": "",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
+        "lat": "40.42604212826493",
+        "lng": "-3.9550781250000004"
       },
-      "id": 17806751
-    },
-    {
-      "cityName": "Castell de Cabres",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-10-01T17:01:35.383Z",
-      "notes": "",
-      "position": {
-        "lat": "40.6723059714534",
-        "lng": "0.04943847656250001"
-      },
-      "id": 73930386
+      "id": 1
     }
   ]
 }
