@@ -1,18 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
-    },
-    {
       "cityName": "Madrid",
       "country": "Spain",
       "emoji": "🇪🇸",
@@ -35,30 +23,6 @@
         "lng": "0.04943847656250001"
       },
       "id": 73930386
-    },
-    {
-      "cityName": "Saint-Maurice-la-Clouere",
-      "country": "France",
-      "emoji": "🇫🇷",
-      "date": "2023-10-01T17:01:35.383Z",
-      "notes": "",
-      "position": {
-        "lat": "46.39499004598367",
-        "lng": "0.48759622303345745"
-      },
-      "id": 73930387
-    },
-    {
-      "cityName": "Gent",
-      "country": "Belgium",
-      "emoji": "🇧🇪",
-      "date": "2023-10-01T17:03:52.989Z",
-      "notes": "",
-      "position": {
-        "lat": "51.0460339226413",
-        "lng": "3.644481694570603"
-      },
-      "id": 73930388
     }
   ]
 }
