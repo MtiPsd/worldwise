@@ -11,6 +11,18 @@
         "lng": "-3.9550781250000004"
       },
       "id": 1
+    },
+    {
+      "cityName": "Saint-Denis-de-Jouhet",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2023-10-01T19:08:41.058Z",
+      "notes": "some people may think they are brave",
+      "position": {
+        "lat": "46.543749602738565",
+        "lng": "1.8457031250000002"
+      },
+      "id": 3
     }
   ]
 }
