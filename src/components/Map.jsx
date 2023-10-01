@@ -12,9 +12,9 @@ import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
 import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "./Button";
+import { useUrlPosition } from "../hooks/useUrlPosition";
 
 function Map() {
-  const [searchParams, setSearchParams] = useSearchParams();
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const { cities } = useCities();
   const {
@@ -22,9 +22,7 @@ function Map() {
     position: geolocationPosition,
     getPosition,
   } = useGeolocation();
-
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
+  const [lat, lng] = useUrlPosition();
 
   // * useEffect works as synchronization mechanism "here"
   // * it only changes position if lat & lng changes
@@ -90,7 +88,6 @@ function DetectClick() {
 
   useMapEvents({
     click: e => {
-      console.log(e);
       const { lat, lng } = e.latlng;
 
       return navigate(`form?lat=${lat}&lng=${lng}`);
