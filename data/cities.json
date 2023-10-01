@@ -1,28 +1,28 @@
 {
   "cities": [
     {
-      "cityName": "Madrid",
+      "cityName": "Boadilla del Monte",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
+      "date": "2023-10-01T18:20:00.170Z",
       "notes": "",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
+        "lat": "40.42604212826493",
+        "lng": "-3.9550781250000004"
       },
-      "id": 17806751
+      "id": 1
     },
     {
-      "cityName": "Castell de Cabres",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-10-01T17:01:35.383Z",
-      "notes": "",
+      "cityName": "Saint-Denis-de-Jouhet",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2023-10-01T19:08:41.058Z",
+      "notes": "some people may think they are brave",
       "position": {
-        "lat": "40.6723059714534",
-        "lng": "0.04943847656250001"
+        "lat": "46.543749602738565",
+        "lng": "1.8457031250000002"
       },
-      "id": 73930386
+      "id": 3
     }
   ]
 }
