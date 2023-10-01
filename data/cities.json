@@ -25,28 +25,40 @@
       "id": 17806751
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
-    },
-    {
-      "cityName": "Nijar",
+      "cityName": "Castell de Cabres",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2023-04-03T07:47:59.202Z",
+      "date": "2023-10-01T17:01:35.383Z",
       "notes": "",
       "position": {
-        "lat": "36.967508314568164",
-        "lng": "-2.13128394200588"
+        "lat": "40.6723059714534",
+        "lng": "0.04943847656250001"
       },
-      "id": 98443198
+      "id": 73930386
+    },
+    {
+      "cityName": "Saint-Maurice-la-Clouere",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2023-10-01T17:01:35.383Z",
+      "notes": "",
+      "position": {
+        "lat": "46.39499004598367",
+        "lng": "0.48759622303345745"
+      },
+      "id": 73930387
+    },
+    {
+      "cityName": "Gent",
+      "country": "Belgium",
+      "emoji": "🇧🇪",
+      "date": "2023-10-01T17:03:52.989Z",
+      "notes": "",
+      "position": {
+        "lat": "51.0460339226413",
+        "lng": "3.644481694570603"
+      },
+      "id": 73930388
     }
   ]
 }
