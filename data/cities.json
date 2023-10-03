@@ -1,28 +1,16 @@
 {
   "cities": [
     {
-      "cityName": "Boadilla del Monte",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-10-01T18:20:00.170Z",
+      "cityName": "Horoatu Crasnei",
+      "country": "Romania",
+      "emoji": "🇷🇴",
+      "date": "2023-10-03T12:36:56.815Z",
       "notes": "",
       "position": {
-        "lat": "40.42604212826493",
-        "lng": "-3.9550781250000004"
+        "lat": "47.12247581664114",
+        "lng": "22.87628173828125"
       },
       "id": 1
-    },
-    {
-      "cityName": "Saint-Denis-de-Jouhet",
-      "country": "France",
-      "emoji": "🇫🇷",
-      "date": "2023-10-01T19:08:41.058Z",
-      "notes": "some people may think they are brave",
-      "position": {
-        "lat": "46.543749602738565",
-        "lng": "1.8457031250000002"
-      },
-      "id": 3
     }
   ]
 }
