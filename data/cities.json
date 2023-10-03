@@ -1,3 +1,16 @@
 {
-  "cities": []
+  "cities": [
+    {
+      "cityName": "Horoatu Crasnei",
+      "country": "Romania",
+      "emoji": "🇷🇴",
+      "date": "2023-10-03T12:36:56.815Z",
+      "notes": "",
+      "position": {
+        "lat": "47.12247581664114",
+        "lng": "22.87628173828125"
+      },
+      "id": 1
+    }
+  ]
 }
