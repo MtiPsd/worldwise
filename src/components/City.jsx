@@ -5,7 +5,7 @@ import { useCities } from "../contexts/CitiesContext";
 import Spinner from "./Spinner";
 import BackButton from "./BackButton";
 
-const formatDate = date =>
+const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
     day: "numeric",
     month: "long",
@@ -24,7 +24,7 @@ function City() {
 
   useEffect(() => {
     getCity(id);
-  }, [id]);
+  }, [getCity, id]);
 
   if (isLoading) {
     return <Spinner />;

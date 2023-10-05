@@ -1,4 +1,9 @@
-import { createContext, useContext, useReducer } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useReducer,
+} from "react";
 import { useEffect } from "react";
 
 const BASE_URL = "http://localhost:8000";
@@ -86,26 +91,34 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
-  async function getCity(id) {
-    // if the selected city is currentCity, then do nothing
-    if (Number(id) === currentCity.id) {
-      return;
-    }
+  // * This city will cause infinite loop later inside useEffect
+  // * so we have to wrap it around a useCallback in order to cache it
+  // ? MORE DETAILS : when we call `getCity` function, it will update the state
+  // ? using `dispatch`. This action will cause changing `getCity` inside useEffect
+  // ? dependency array [getCity], which will cause infinite loop & fetch requests
+  const getCity = useCallback(
+    async function getCity(id) {
+      // if the selected city is currentCity, then do nothing
+      if (Number(id) === currentCity.id) {
+        return;
+      }
 
-    dispatch({ type: "loading" });
+      dispatch({ type: "loading" });
 
-    try {
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
-      const data = await res.json();
+      try {
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const data = await res.json();
 
-      dispatch({ type: "city/loaded", payload: data });
-    } catch (error) {
-      dispatch({
-        type: "rejected",
-        payload: "There was an error loading data... ",
-      });
-    }
-  }
+        dispatch({ type: "city/loaded", payload: data });
+      } catch (error) {
+        dispatch({
+          type: "rejected",
+          payload: "There was an error loading data... ",
+        });
+      }
+    },
+    [currentCity.id],
+  );
 
   async function createCity(newCity) {
     dispatch({ type: "loading" });
@@ -149,6 +162,9 @@ function CitiesProvider({ children }) {
     }
   }
 
+  // we did not need to cache values here
+  // because there is no Component above this context to cause it
+  // re render
   return (
     <CitiesContext.Provider
       value={{
