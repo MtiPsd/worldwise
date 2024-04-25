@@ -2,10 +2,15 @@
 
 WorldWise is a React application that allows you to track your adventures around the world. It provides a world map to visualize your travels and keeps a record of the cities you've visited.
 
+![logo](https://github.com/MtiPsd/worldwise/assets/95580073/eb790454-c37e-41a6-908f-375efe85f233)
 
 
 
 ## Project Demo
+
+
+
+Uploading Bandicam 2024-04-25 15-36-12-816.mp4…
 
 
 
