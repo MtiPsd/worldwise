@@ -12,7 +12,7 @@ WorldWise is a React application that allows you to track your adventures around
 
 
 
-https://github.com/MtiPsd/worldwise/assets/95580073/a77bc98b-f120-4d36-b8a4-49aa7553399d
+https://github.com/MtiPsd/worldwise/assets/95580073/34573a2c-a54c-44ee-99ad-f3d094db8d52
 
 
 
